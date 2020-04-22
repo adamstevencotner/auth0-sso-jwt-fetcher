@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "jest",
-    "start": "node src/index.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -22,6 +21,6 @@
     "open": "^7.0.3"
   },
   "bin": {
-    "asjf": "src/index.js"
+    "asjf": "src/cli.js"
   }
 }
