@@ -1,0 +1,27 @@
+{
+  "name": "auth0-sso-jwt-fetcher",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "jest",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamstevencotner/auth0-sso-jwt-fetcher.git"
+  },
+  "author": "Adam Cotner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamstevencotner/auth0-sso-jwt-fetcher/issues"
+  },
+  "homepage": "https://github.com/adamstevencotner/auth0-sso-jwt-fetcher#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nonce-fast": "^1.0.2",
+    "open": "^7.0.3"
+  },
+  "bin": {
+    "asjf": "src/index.js"
+  }
+}

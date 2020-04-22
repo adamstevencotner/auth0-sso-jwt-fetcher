@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get ya JWTs heeeah</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        #jwt-container {
+            font-family: monospace;
+            overflow-wrap: break-word;
+        }
+        .button-container {
+            width: max-content;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <p id='jwt-container'>...loading</p>
+        </div>
+    </div>
+    <div class="container button-container">
+        <button onclick="copyJwt()" class="btn btn-primary">Copy to Clipboard</button>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams('?' + window.location.href.substring(window.location.href.indexOf('#') + 1));
+        const jwt = 'Bearer ' + urlParams.get('access_token');
+
+        var jwtContainer = document.getElementById("jwt-container");
+        jwtContainer.innerHTML = jwt;
+
+        const copyJwt = () => {
+            const el = document.createElement('textarea');
+            el.value = jwt;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            const xh = new XMLHttpRequest();
+            xh.open('POST', '/kill');
+            xh.send();
+        }
+
+    </script>
+</body>
+</html>
